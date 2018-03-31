@@ -6,6 +6,10 @@
 /pkg/
 /spec/reports/
 /tmp/
+log/*.log
+Gemfile.lock
+*.gem
+gemfiles/*.gemfile.lock
 
 # rspec failure tracking
 .rspec_status
