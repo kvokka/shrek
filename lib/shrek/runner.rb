@@ -16,7 +16,7 @@ module Shrek
     private
 
     def chain
-      layers.reverse.inject(->(*a) { a }) { |inner, outer| outer.new(inner) }
+      layers.reverse.inject(EMPTY_RETURN) { |inner, outer| outer.new(inner) }
     end
 
     def parse_layers!(*layers)

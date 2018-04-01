@@ -5,6 +5,8 @@ require 'shrek/runner'
 require 'shrek/layers'
 
 module Shrek
+  EMPTY_RETURN = proc { |*a| a }
+
   module_function
 
   def use_layers(*args)
