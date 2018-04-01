@@ -13,5 +13,5 @@ module Shrek
     Runner.new(*args)
   end
 
-  singleton_class.alias_method :[], :use_layers
+  singleton_class.send(:alias_method, :[], :use_layers)
 end
