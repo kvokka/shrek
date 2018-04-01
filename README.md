@@ -77,7 +77,7 @@ Let's summarize procs and cons of this concept:
 
 * Maximum encapsulation
 * Easy reordering
-* Each peace of logic handle only own part of the error
+* Each peace of logic handles only own part of the error
 * Readable high level interface with minimal noise
 * Standardize interface for one peace of domain logic
 * Static analyzers will be happy
@@ -88,23 +88,23 @@ Let's summarize procs and cons of this concept:
 
 * One more abstraction layer
 * Can be over-engineering 
-* Require more memory
+* Requires more memory
 * More code, more files
 
 ### Why do I need it?
 
-Lets try do burn in code this little snippet of tale. Given:
+Lets try to put this little snippet of a tale into a code . Given:
 
-> Shrek want to eat something, and he decide to do slug soup. He took
+> Shrek wants to eat something, and he decides to do a slug soup. He got
 > slugs and then went to get some wood for the fireplace. When he came back
-> he put the wood to the fireplace and tried to make fire. But he did not found
-> matches, so he had to move the wood back. After he made shashimi from the
-> slugs and ate as much as he could. The rest of the food he put to the fridge.
+> he put the wood into the fireplace and tried to make fire. But he did not find
+> matches, so he had to move the wood back. He then made shashimi from the
+> slugs and ate as much as he could.He put the rest of the food into the fridge.
 
-It is simple business story, but think for a while, how you will solve it?
+It is a simple business story, but think for a while, how will you solve it?
 And keep in mind, that in the real world a lot of things can go wrong and you
-want to be able to extend this story, when author decides, that Shrek also have
-to try to find the lighter or add some swamp species for better flavor (or 
+want to be able to extend this story, when author decides, that Shrek also has
+to try to find the lighter or add some swamp spices for better flavor (or 
 onion)
 
 The simplest way is 
@@ -124,15 +124,15 @@ The simplest way is
 But you will have to keep explicit error handler, and resolve all sort of 
 errors there. You will not be able to share one error between parts of the 
 service class, so you will do new error names or generalize errors (again, this
-pattern is for big and heavy tasks). So the error handler will grow (May be you
-extract it also). At the end you will find yourself with untouchable mess.
+pattern is for big and heavy tasks). So the error handler will grow (May be you also
+extract it ). At the end you will find yourself with a mess.
 Do not believe me? Ok, take default `Rails::Middleware` and try to rewrite it 
-in procedural style on this weekend (and do not plan anything else, you will be
-fun for all the time ;)
+in procedural style this weekend (and do not plan anything else, you will have
+lot's of fun ;)
 
-Another way, how to handle this sort problem is `composite` pattern (the first 
+Another way to handle this sort of  problem is `composite` pattern (the first 
 example of this pattern, which came to me is `ActiveRecord::Migration`). It will
-aim the same goal, but also you will get DSL of the `composite`. Also, you will
+aim at the same goal, but also you will get DSL of the `composite`. Also you will
 not be able to have the ability of error splitting. Usually it is suitable.
 
 
@@ -140,7 +140,7 @@ not be able to have the ability of error splitting. Usually it is suitable.
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+To install this gem to your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## Contributing
 
