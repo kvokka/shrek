@@ -3,7 +3,9 @@
 require 'rails_helper'
 
 RSpec.describe Layers::Parser do
-  let(:file) { File.open(Rails.root.join('spec', 'fixtures', 'files', 'people_stats.json')).read }
+  include PeopleStats
+
+  let(:file) { people_stats }
 
   it 'should parse valid json' do
     expect(subject.call(file)).to be_truthy
