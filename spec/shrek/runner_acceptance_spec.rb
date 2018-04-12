@@ -117,6 +117,6 @@ RSpec.describe Awesome do
 end
 
 RSpec.describe Shrek do
-  subject{ Shrek[Entry, TakeSlugs, CutShashimi, Eat].call(Dish.new).first }
+  subject { Shrek[Entry, TakeSlugs, CutShashimi, Eat].call(Dish.new).first }
   it('should be belissimo') { expect(subject.state).to eq(:belissimo) }
 end
