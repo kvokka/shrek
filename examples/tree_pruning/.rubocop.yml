@@ -1,0 +1,7 @@
+inherit_from: ../../.rubocop.yml
+
+Style/MixinUsage:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
