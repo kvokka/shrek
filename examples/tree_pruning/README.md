@@ -69,3 +69,15 @@ The resulting (pruned) tree should be this:
 | `Demographics`     | `Birth and deaths`   | `Births per year`        | **Female**      |  
 | `Demographics`     | `Age and sex`        | `Age distribution`       | **>30y**        |  
 
+# Result
+
+Finish endpoint can used with
+
+```
+curl -v 'http://127.0.0.1:3000/?indicator_ids\[\]=31&indicator_ids\[\]=32&indicator_ids\[\]=1'
+```
+
+In the real world will be good to move all exceptions handling to `ApplicationController`
+but now I think it is ok as it is.
+
+I still do not have real endpoint. Use stub file is not right, so I leaved stub uri. 

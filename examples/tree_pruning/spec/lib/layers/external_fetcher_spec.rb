@@ -26,8 +26,7 @@ RSpec.describe Layers::ExternalFetcher do
   end
 
   it "act's as Shrek, pusing request result forward" do
-    stub_request(:get, 'http://enter_real_uri_here.stub/')
-      .to_return(status: 200, body: 'MyResult', headers: {})
+    stub_request(:get, 'http://enter_real_uri_here.stub/').to_return(status: 200, body: 'MyResult')
     expect(subject.call.first).to eq 'MyResult'
   end
 end

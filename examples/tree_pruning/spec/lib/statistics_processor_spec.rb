@@ -12,11 +12,11 @@ RSpec.describe StatisticsProcessor do
   end
 
   it 'should return all collection' do
-    expect(subject.call.first.size).to eq 12
+    expect(subject.call[:json].size).to eq 12
   end
 
   it 'should return filtered collection' do
-    result = subject.call(indicator_ids: [1, 31, 32]).first[:json]
+    result = subject.call(indicator_ids: [1, 31, 32])[:json]
 
     expect(result.first['sub_themes'].first['categories'].first['indicators'].first['id']).to eq 1
     expect(result.last['sub_themes'].first['categories'].first['indicators'].map { |a| a['id'] }).to include(32, 31)
