@@ -55,6 +55,12 @@ module Shrek
         it { is_expected.to include(foo: 99, baz: :value, bar: :pass, after_execution: :added) }
         it { is_expected.to be_a Array }
       end
+
+      context 'hash2, hash3 with own return self' do
+        subject { Shrek[Layer1, Layer3, self_return: ->(a) { { preffix: a } }].call({}) }
+        it { is_expected.to include(preffix: { foo: 23 }) }
+        it { is_expected.to be_a Hash }
+      end
     end
   end
 end

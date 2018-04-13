@@ -68,8 +68,12 @@ may be used in own classes
     include Shrek
   end
   
-  Paint.new.use_layers FindPaints, SelectWall, PrepareBrushes
+  Paint.new.use_layers FindPaints, SelectWall, PrepareBrushes,
+                       self_return: ->(result) { a }
 ```
+
+We also are able to make some tuning with returning value with `self_return` option.
+It use something, which respond_to :call.
 
 Let's summarize procs and cons of this concept:
 
